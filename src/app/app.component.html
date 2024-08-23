@@ -1,3 +1,36 @@
 <h1>{{ data }} {{ title }}</h1>
 <p>{{ getValue() }}</p>
-<p>{{ data == "hellooo" ? "xyz" : "abc" }}</p>
+<p>{{ data == "hello" ? "xyz" + 2 + 2 : "abc" }}</p>
+<button (click)="getName('daniyal')">Click Me</button>
+<app-login></app-login>
+<br />
+<input
+  type="text"
+  placeholder="Event key up"
+  #box
+  (keyup)="getData(box.value)"
+/>
+<input
+  type="text"
+  placeholder="Event key down"
+  #box1
+  (keydown)="getData(box1.value)"
+/>
+<input
+  type="text"
+  placeholder="Event blur"
+  #box2
+  (blur)="getData(box2.value)"
+/>
+<br /><br />
+<button>Get Data</button>
+<br /><br />
+<input
+  type="text"
+  placeholder="Enter Name"
+  #name
+  (keyup)="getNameValue(name.value)"
+  name="name"
+/>
+<p>{{displayName}}</p>
+<button (click)="getNameValue(name.value)">Get Name Value</button>
