@@ -21,4 +21,17 @@ export class AppComponent {
   getNameValue(val: string) {
     this.displayName = val;
   }
+
+  count = 0;
+  counter(type: string) {
+    type === 'add'
+      ? this.count++
+      : this.count === 0
+      ? (this.count = 0)
+      : this.count--;
+  }
+
+  username='daniyal'
+  disabled=false
+  show=true
 }

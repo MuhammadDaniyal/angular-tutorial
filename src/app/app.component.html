@@ -32,5 +32,40 @@
   (keyup)="getNameValue(name.value)"
   name="name"
 />
-<p>{{displayName}}</p>
+<p>{{ displayName }}</p>
 <button (click)="getNameValue(name.value)">Get Name Value</button>
+<br /><br />
+
+<h1>Counter</h1>
+<button (click)="counter('sub')">--</button>
+<p>{{ count }}</p>
+<button (click)="counter('add')">++</button>
+
+<br /><br />
+<input
+  type="text"
+  name="username"
+  value="{{ username }}"
+  disabled="{{ disabled }}"
+/>
+<br /><br />
+<input type="text" name="username" [value]="username" [disabled]="disabled" />
+<br /><br />
+
+<!-- 
+<h1 *ngIf="show; else elseBlock">
+  If - Statement
+</h1>
+
+<ng-template #elseBlock>
+  <h1> Else - Statement</h1>
+</ng-template> -->
+
+<span *ngIf="show; then ifBlock; else elseBlock"></span>
+<ng-template #ifBlock>
+  <h1>If - Statement</h1>
+</ng-template>
+
+<ng-template #elseBlock>
+  <h1>Else - Statement</h1>
+</ng-template>
